@@ -1,0 +1,12 @@
+apiVesrion: v1
+kind: LoadBalancer
+metadata:
+  name: replica-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: pod2myapp
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

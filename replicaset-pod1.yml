@@ -6,7 +6,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       app: pod2myapp
   template:
     metadata:
@@ -14,7 +14,7 @@ spec:
       labels:
         app: pod2myapp
     spec:
-      conatiners:
+      containers:
         - name: mypod2
           image: stacksimplify/kubenginx:2.0.0
           ports:
