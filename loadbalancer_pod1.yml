@@ -1,7 +1,7 @@
-apiversion: v1
+apiVersion: v1
 kind: Service
 metadata:
-  - name: loadbalanceer-for-pod1
+  name: loadbalanceer-for-pod1
   
 spec:
   type: LoadBalancer  # here it can be any clusterip, nodeport etc
