@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata: 
   name: myfirstpod
-  lables: myapp-metadata
+  labels: 
+     app: myappmetadata
 
 spec:
   containers:
-    - name: myapp-spec
+    - name: myappspec
       image: stacksimplify/kubenginx:1.0.0
       ports:
         - containerPort: 80

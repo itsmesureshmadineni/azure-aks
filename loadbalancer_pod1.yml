@@ -1,0 +1,13 @@
+apiversion: v1
+kind: Service
+metadata:
+  - name: loadbalanceer-for-pod1
+  
+spec:
+  type: LoadBalancer  # here it can be any clusterip, nodeport etc
+  selector:
+    app: myappmetadata   #this is lable of container to which you want to send traffic
+  ports: 
+    - name: http
+      port: 80   #service port
+      targetPort: 80  #containerport
