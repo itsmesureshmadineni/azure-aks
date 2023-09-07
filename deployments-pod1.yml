@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rdeployement-pod1
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod3myapp
+  template:
+    metadata:
+      name: pod3myapp-template
+      labels:
+        app: pod3myapp
+    spec:
+      containers:
+        - name: mypod3
+          image: stacksimplify/kubenginx:3.0.0
+          ports:
+            - containerPort: 80

@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: replica-loadbalancer
+  name: deployment-loadbalancer
 spec:
   type: LoadBalancer
   selector:
-    app: pod2myapp
+    app: pod3myapp
   ports:
     - name: http
       port: 80
