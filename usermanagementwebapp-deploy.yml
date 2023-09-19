@@ -26,12 +26,12 @@ spec:
             - containerPort: 8080           
           env:
             - name: DB_HOSTNAME
-              value: 10.224.0.39            
+              value: "mysql"           
             - name: DB_PORT
               value: "3306"            
             - name: DB_NAME
-              value: "webappdb"            
+              value: "dbadmin"            
             - name: DB_USERNAME
               value: "root"            
             - name: DB_PASSWORD
-              value: "dbpassword11"            
+              value: "Redhat1449"            
