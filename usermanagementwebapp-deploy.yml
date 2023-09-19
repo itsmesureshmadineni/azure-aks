@@ -17,11 +17,16 @@ spec:
       initContainers:
         - name: init-db
           image: busybox:1.31
-          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z 10.224.0.39 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']      
+          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']      
       containers:
         - name: usermgmt-webapp
           image: stacksimplify/kube-usermgmt-webapp:1.0.0-MySQLDB
           imagePullPolicy: Always
+          volumeMounts:
+        - name: ca-pemstore
+          mountPath: /Users/sureshmadineni/Documents/Devops/azurecli/k8s/azure-aks/DigiCertGlobalRootCA.crt.pem
+          subPath: DigiCertGlobalRootCA.crt.pem
+          readOnly: True
           ports: 
             - containerPort: 8080           
           env:
@@ -34,4 +39,8 @@ spec:
             - name: DB_USERNAME
               value: "root"            
             - name: DB_PASSWORD
-              value: "Redhat1449"            
+              valueFrom: 
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password
+                   
