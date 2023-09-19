@@ -1,0 +1,7 @@
+appVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  type: ExternalName
+  externalName: mysqlaz400.mysql.database.azure.com
