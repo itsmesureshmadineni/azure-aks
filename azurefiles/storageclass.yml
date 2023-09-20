@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: my-azurefile-sc
 provisioner: kubernetes.io/azure-file
-mounyOptions: 
+mountOptions: 
   - dir_mode=0777
   - file_mode=0777
   - uid=0
