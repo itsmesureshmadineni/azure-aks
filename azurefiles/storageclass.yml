@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: my-azurefile-sc
+provisioner: kubernetes.io/azure-file
+mounyOptions: 
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=0
+  - gid=0
+parameters:
+  skuName: Standard_LRS
