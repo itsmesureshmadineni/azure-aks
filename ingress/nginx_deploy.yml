@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx-ingress-app
-          image: tacksimplify/kube-nginxapp1:1.0.0
+          image: stacksimplify/kube-nginxapp1:1.0.0
           ports:
             - containerPort: 80
